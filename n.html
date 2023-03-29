@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body{
+         background-color:#333;
+      } 
+    .clock {
+     text-align:center;
+     font-size:60px;
+     color:yellow;
+     margin:200px auto
+    }
+    .clock span {
+      padding:15px;
+      background:rgb(95,95,95)
+    }
+   </style>
+</head>
+<body>
+   <div class="clock"></div>
+   <script>
+      const div=document.querySelector('.clock');
+const click=function(){
+    const now=new Date();
+    const minutes=now.getMinutes();
+    const hours=now.getHours();
+    const second=now.getSeconds();
+    const html=`<span>${hours}</span>:
+    <span>${minutes}</span>:
+    <span>${second}</span> ` 
+div.innerHTML=html
+}
+setInterval(click,1000);
+   </script>
+</body>
+</html>
